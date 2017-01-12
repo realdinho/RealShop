@@ -4,7 +4,7 @@ class DBase{
     private $_host = "us-cdbr-iron-east-04.cleardb.net";
     private $_user = "b93497a15432a9";
     private $_password = "c38a0b0e";
-    private $_name = "CLEARDB_DATABASE_URL";
+    private $_name = "heroku_547a30bfe0838c4";
     
     private $_connDB = false;
     public $_last_query = null;
