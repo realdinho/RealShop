@@ -1,6 +1,21 @@
 <?php
 
 class Helper {
+    
+    public static function getActive($page = null){
+        if(!empty($page)){
+            if(is_array($page)){
+                $error = array();
+                foreach ($page as $key => $value){
+                    if(Url::getParam($key) != $value){
+                        array_push($error, $key);
+                    }
+                }
+                return empty($error) ? " class=\"act\"" : null;
+            }
+        }
+        return $page == Url::cPage() ? " class=\"act\"" : null;
+    }
 
     public static function encodeHTML($string, $case = 2) {
         switch ($case) {
@@ -22,6 +37,24 @@ class Helper {
                 return $string;
                 break;
         }
+    }
+    
+    public static function getImgSize($image, $case){
+        if(is_file($image)){
+            //0=>width, 1=>height, 2=>type, 3=>attributes
+            $size = getimagesize($image);
+            return $size[$case];
+        }
+    }
+    
+    public static function shortString($string, $len=150){
+        if(strlen($string) > $len) {
+            $tring = trim(substr($string, 0, $len));
+            $tring = substr($string, 0, strpos($string, " "))."&hellip;";
+        } else {
+            $string .= "&hellip;";
+        }
+        return $string;
     }
 
 }
