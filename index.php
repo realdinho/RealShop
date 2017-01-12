@@ -1,6 +1,8 @@
 <?php
 
-echo "this is myShop proj";
+require_once('inc/autoload');
+$core = new Core();
+$core->run();
 
 ?>
 
