@@ -14,7 +14,7 @@
         <meta name="description" content="Ecommerce website project" />
         <meta name="keywords" content="Ecommerce website project" />
         <meta http-equiv="imagetoolbar" content="no" />
-        <link href="/../MyShop/css/core.css" rel="stylesheet" type="text/css" />
+        <link href="https://calm-cliffs-44833.herokuapp.com/css/core.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <div id="header">
@@ -30,7 +30,7 @@
                         <?php 
                             if(!empty($cats)){
                                 foreach ($cats as $cat){
-                                    echo "<li><a href=\"http://localhost/MyShop/?page=catalogue&amp;category=".$cat['id']."\"";
+                                    echo "<li><a href=\"https://calm-cliffs-44833.herokuapp.com/?page=catalogue&amp;category=".$cat['id']."\"";
                                     echo Helper::getActive(array('category' => $cat['id']));
                                     echo ">";
                                     echo Helper::encodeHTML($cat['name']);

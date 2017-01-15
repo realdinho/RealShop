@@ -31,7 +31,7 @@ if (empty($cat)) {
             $width = Helper::getImgSize($image, 0);
             $width = $width > 120 ? 120 : $width;
         ?>
-        <a href="/http://localhost/MyShop/?page=catalogue-item&amp;category=<?php 
+        <a href="https://calm-cliffs-44833.herokuapp.com/?page=catalogue-item&amp;category=<?php 
         echo $category['id']; ?>&amp;id=<?php echo $row['id']; ?>">
             <img src="<?php echo $image; ?>" alt="<?php echo Helper::encodeHTML($row['name'], 1); ?>"
                  width="<?php echo $width; ?>" />
@@ -39,7 +39,7 @@ if (empty($cat)) {
     </div>
     <div class="catalogue_wrapper_right">
         <h4>
-            <a href="/http://localhost/MyShop/?page=catalogue-item&amp;category=<?php 
+            <a href="https://calm-cliffs-44833.herokuapp.com/?page=catalogue-item&amp;category=<?php 
             echo $category['id']; ?>&amp;id=<?php echo $row['id']; ?>">
                 <?php echo Helper::encodeHTML($row['name'], 1) ?>
             </a>
