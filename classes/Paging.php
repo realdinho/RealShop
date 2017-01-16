@@ -44,4 +44,64 @@ class Paging {
         }
         return $out;
     }
+    
+    private function getLinks(){
+        if ($this->_numb_of_pages > 1){
+            $out = array();
+            
+            //first link
+            if($this->_current > 1){
+                $out[] = "<a href=\"".$this->_url."\">First</a>";
+            } else {
+                $out[] = "<span>First</span>";
+            }
+            
+            //previous link
+            if($this->_current > 1){
+                //previous page number
+                $id = $this->_current - 1;
+                
+                $url = $id > 1 ? 
+                        $this->_url."&amp;".self::$_key."=".$id :
+                        $this->_url;
+                
+                $out[] = "<a href=\"{$url}\">Previous</a>";
+            } else {
+                $out[] = "<span>Previous</span>";
+            }
+            
+            //next link
+            if($this->_current != $this->_numb_of_pages){
+                //next page number
+                $id = ($this->_current + 1);
+                $url = $this->_url."&amp;".self::$_key."=".$id;
+                
+                $out[] = "<a href=\"{$url}\">Next</a>";
+            } else {
+                $out[] = "<span>Next</span>";
+            }
+            
+            //last link
+            if($this->_current != $this->_numb_of_pages){
+                $url = $this->_url."&amp;".self::$_key."=".$this->_numb_of_pages;
+                
+                $out[] = "<a href=\"{$url}\">Las</a>";
+            } else {
+                $out[] = "<span>Last</span>";
+            }
+            
+            return "<li>".  implode("</li><li>", $out)."</li>";
+        }
+    }
+    
+    public function getPaging() {
+        $links = $this->getLinks();
+        if(!empty($links)){
+            $out = "<ul class=\"paging\">";
+            $out .= $links;
+            $out .= "</ul>";
+            
+            return $out;
+        }
+    }
 }

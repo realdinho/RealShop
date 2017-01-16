@@ -53,6 +53,8 @@ if (empty($cat)) {
 
 <?php
         }
+         echo $objPaging->getPaging();
+        
     } else{
 ?>
 <p>There are no products in this category</p>
