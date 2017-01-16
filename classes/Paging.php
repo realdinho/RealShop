@@ -85,7 +85,7 @@ class Paging {
             if($this->_current != $this->_numb_of_pages){
                 $url = $this->_url."&amp;".self::$_key."=".$this->_numb_of_pages;
                 
-                $out[] = "<a href=\"{$url}\">Las</a>";
+                $out[] = "<a href=\"{$url}\">Last</a>";
             } else {
                 $out[] = "<span>Last</span>";
             }

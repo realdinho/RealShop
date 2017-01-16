@@ -25,10 +25,12 @@
         <div id="outer">
             <div id="wrapper">
                 <div id="left">
+                <?php require_once('basket_left.php'); ?>
+                    <?php if(!empty($cats)){ ?>
+
                     <h2>Categories</h2>
                     <ul id="navigation">
-                        <?php 
-                            if(!empty($cats)){
+                            <?php
                                 foreach ($cats as $cat){
                                     echo "<li><a href=\"https://calm-cliffs-44833.herokuapp.com/?page=catalogue&amp;category=".$cat['id']."\"";
                                     echo Helper::getActive(array('category' => $cat['id']));
@@ -36,8 +38,9 @@
                                     echo Helper::encodeHTML($cat['name']);
                                     echo "</a></li>";
                                 }
-                            }
-                        ?>
+                            ?>
                     </ul>
+                            <?php } ?>
+                    
                 </div>
                 <div id="right">
