@@ -50,7 +50,8 @@ if (empty($cat)) {
 		</h4>
         <p> <?php 
 				echo Helper::shortString(Helper::encodeHTML($row['description'])); ?> </p>
-        <p><?php echo Basket::ActiveButton($row['id']); ?></p>
+				<p><a>Add to basket</a></p>
+        <p><?php echo Basket::activeButton($row['id']); ?></p>
     </div>
 </div>
 
