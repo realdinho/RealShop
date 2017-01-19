@@ -62,6 +62,7 @@ $(document).ready(function () {
             var trigger = $(this);
             var param = trigger.attr("rel");
             var item = param.split("_");
+			
             $.ajax({
                 type: 'POST',
                 url: '/mod/basket.php',
@@ -131,44 +132,44 @@ $(document).ready(function () {
 
 
     // proceed to paypal 
-    if ($('.paypal').length > 0) {
-        ($('.paypal').click(function () {
+    // if ($('.paypal').length > 0) {
+        // ($('.paypal').click(function () {
 
 
-            var token = $(this).attr('id');
-            var image = "<div style=\"text-align:center\">";
-            image = image + "<img src=\"images/loadinfo.net.gif\"";
-            image = image + " alt=\"Proceeding to PayPal\" />";
-            image = image + "<br />Please wait while we are redirecting you to PayPal...";
-            image = image + "</div><div id=\"frm_pp\"></div>";
+            // var token = $(this).attr('id');
+            // var image = "<div style=\"text-align:center\">";
+            // image = image + "<img src=\"images/loadinfo.net.gif\"";
+            // image = image + " alt=\"Proceeding to PayPal\" />";
+            // image = image + "<br />Please wait while we are redirecting you to PayPal...";
+            // image = image + "</div><div id=\"frm_pp\"></div>";
 
-            $('#big_basket').fadeOut(200, function () {
-                $(this).html(image).fadeIn(200, function () {
-                    send2PP(token);
-                });
-            });
+            // $('#big_basket').fadeOut(200, function () {
+                // $(this).html(image).fadeIn(200, function () {
+                    // send2PP(token);
+                // });
+            // });
 
-        }));
-    }
+        // }));
+    // }
 
 
-    function send2PP(token) {
-        $.ajax({
-            type: 'POST',
-            url: '/mod/paypal.php',
-            data: ({token: token}),
-            dataType: 'html',
-            success: function (data) {
-                $('#frm_pp').html(data);
-                // submit form automatically
-                $('#frm_paypal').submit();
+    // function send2PP(token) {
+        // $.ajax({
+            // type: 'POST',
+            // url: '/mod/paypal.php',
+            // data: ({token: token}),
+            // dataType: 'html',
+            // success: function (data) {
+                // $('#frm_pp').html(data);
+                // // submit form automatically
+                // $('#frm_paypal').submit();
                 
-            },
-            error: function () {
-                alert('An error has occurred');
-            }
-        });
-    }
+            // },
+            // error: function () {
+                // alert('An error has occurred');
+            // }
+        // });
+    // }
 
 
 });

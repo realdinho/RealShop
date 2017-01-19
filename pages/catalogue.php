@@ -1,5 +1,4 @@
 <?php
-
 $cat = Url::getParam('category');
 
 if (empty($cat)) {
@@ -44,8 +43,13 @@ if (empty($cat)) {
                 <?php echo Helper::encodeHTML($row['name'], 1) ?>
             </a>
         </h4>
-        <h4> Price: <?php echo Catalogue::$_currency; echo number_format($row['price'], 2); ?> </h4>
-        <p> <?php echo Helper::shortString(Helper::encodeHTML($row['description'])); ?> </p>
+        <h4> 
+			Price: <?php 
+						echo Catalogue::$_currency; 
+						echo number_format($row['price'], 2); ?> 
+		</h4>
+        <p> <?php 
+				echo Helper::shortString(Helper::encodeHTML($row['description'])); ?> </p>
         <p>Add to basket</p>
         <p><?php echo Basket::ActiveButton($row['id']); ?></p>
     </div>

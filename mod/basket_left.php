@@ -14,3 +14,4 @@
 	<a href="/?page=basket">View Basket</a> |
 	<a href="/?page=checkout">Checkout</a>
 </p>
+<div class="dev br_td">&#160;</div>
