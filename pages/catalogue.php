@@ -44,13 +44,11 @@ if (empty($cat)) {
             </a>
         </h4>
         <h4> 
-			Price: <?php 
-						echo Catalogue::$_currency; 
-						echo number_format($row['price'], 2); ?> 
+			Price: 
+			<?php echo Catalogue::$_currency;  ?> 
+			<?php echo number_format($row['price'], 2); ?> 
 		</h4>
-        <p> <?php 
-				echo Helper::shortString(Helper::encodeHTML($row['description'])); ?> </p>
-				<p><a>Add to basket</a></p>
+        <p> <?php echo Helper::shortString(Helper::encodeHTML($row['description'])); ?> </p>
         <p><?php echo Basket::activeButton($row['id']); ?></p>
     </div>
 </div>
