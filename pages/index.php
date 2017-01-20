@@ -1,7 +1,3 @@
-<?php
-require_once('template/_header.php');
-?>
+<?php require_once ('_header.php'); ?>
 
-<?php
-require_once('template/_footer.php');
-?>
+<?php require_once ('_footer.php'); ?>

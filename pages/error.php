@@ -1,5 +1,5 @@
-<?php require_once('template/_header.php'); ?>
+<?php require_once ('_header.php'); ?>
+<h1>Page not found!</h1>
+<p>The page you are trying to access does not exist or has been moved.</p>
 
-<h1>Error</h1>
-
-<?php require_once('template/_footer.php'); ?>
+<?php require_once ('_footer.php'); ?>

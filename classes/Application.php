@@ -7,5 +7,7 @@ class Application {
     public function __construct() {
         $this->db = new DBase();
     }
+    
+    
 }
 
